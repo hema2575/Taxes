@@ -1,5 +1,5 @@
 ```mermaid
-flowchart TD
+flowchart TD Decision Tree
     A[Start: Business Income] --> B{Is it a Qualified Trade or Business?}
 
     B -->|Yes| C{Is Taxpayer Eligible for QBI Deduction?}
