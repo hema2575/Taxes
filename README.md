@@ -10,6 +10,6 @@ Many taxpayers earn income from activities they enjoy — such as crafts, tutori
 
 The answer depends on facts and circumstances, including the taxpayer's intent, activity level, recordkeeping, and profit motive.
 
-This decision tree is designed as an educational tool to help organize the thought process.
+This decision tree is designed as a decision tool to help organize the thought process.
 
 ---
