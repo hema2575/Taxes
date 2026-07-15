@@ -97,15 +97,6 @@ The goal is to make tax concepts easier to understand for everyday taxpayers and
 
 ---
 
-## Skills Demonstrated
-
-- Tax research and interpretation
-- Translating tax rules into decision logic
-- Mermaid diagram creation
-- GitHub documentation
-- User-focused communication
-
----
 
 ## Future Decision Trees
 
