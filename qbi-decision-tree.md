@@ -1,16 +1,20 @@
-  # Hobby vs. Business: Tax Decision Tree
+# Hobby vs. Business: Tax Decision Tree
 
+This decision tree helps explain the thought process behind classifying an income-producing activity as a hobby or a business.
 
-  
+## Decision Tree
+
 ```mermaid
 flowchart TD
-    A[Start: Business Income] --> B{Is it a Qualified Trade or Business?}
+    A[Activity generates income] --> B{Is there a profit motive?}
 
-    B -->|Yes| C{Is Taxpayer Eligible for QBI Deduction?}
-    B -->|No| D[No QBI Deduction]
+    B -->|Yes| C[Business Activity]
+    B -->|No| D{Is the activity mainly for personal enjoyment?}
 
-    C -->|Yes| E[Calculate QBI Deduction]
-    C -->|No| D
+    D -->|Yes| E[Possible Hobby]
+    D -->|No| F[Review Facts and Circumstances]
 
-    E --> F[Report Deduction on Form 1040]
+    C --> G[Business income and expenses may be reported accordingly]
+    E --> H[Different tax treatment may apply]
+    F --> I[Analyze overall activity]
 ```
