@@ -5,7 +5,7 @@ This decision tree helps explain the thought process behind classifying an incom
 ## Decision Tree
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Activity generates income] --> B{Is there a profit motive?}
 
     B -->|Yes| C[Business Activity]
