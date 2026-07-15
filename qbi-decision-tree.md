@@ -1,5 +1,9 @@
+  # Hobby vs. Business: Tax Decision Tree
+
+
+  
 ```mermaid
-flowchart TD Decision Tree
+flowchart TD
     A[Start: Business Income] --> B{Is it a Qualified Trade or Business?}
 
     B -->|Yes| C{Is Taxpayer Eligible for QBI Deduction?}
