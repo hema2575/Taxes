@@ -103,6 +103,7 @@ The goal is to make tax concepts easier to understand for everyday taxpayers and
 Planned topics:
 
 - QBI Deduction Eligibility
+- Child and Dependent Care Credit: Qualifying, Credits
 - Schedule C vs Hobby Income
 - Gig Worker Tax Basics
 - Mileage Deduction Rules
