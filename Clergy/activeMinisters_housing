@@ -1,48 +1,48 @@
 ```mermaid
 flowchart TD
 
-A[Housing Benefit for Active Minister] --> B{Is the person a qualifying minister<br/>performing ministerial services?}
+A["Housing Benefit for Active Minister"] --> B{"Is the person a qualifying minister performing ministerial services?"}
 
-B -->|No| C[Apply normal tax rules<br/>Housing benefit may be taxable]
+B -->|No| C["Apply normal tax rules. Housing benefit may be taxable"]
 
-B -->|Yes| D{Type of Benefit?}
+B -->|Yes| D{"Type of Benefit?"}
 
-D --> E[Cash Housing Allowance]
-D --> F[Church-Provided Parsonage<br/>Fair Rental Value]
+D --> E["Cash Housing Allowance"]
+D --> F["Church-Provided Parsonage<br/>Fair Rental Value"]
 
-E --> G{Federal Income Tax}
-F --> H{Federal Income Tax}
+E --> G{"Federal Income Tax"}
+F --> H{"Federal Income Tax"}
 
-G --> I[Excluded from gross income<br/>if qualified]
+G --> I["Excluded from gross income if qualified"]
 
-I --> J[Exclusion limited to the least of:<br/>• Designated housing allowance<br/>• Actual housing expenses<br/>• Fair rental value of home<br/>including furnishings and utilities]
+I --> J["Exclusion limit is the lowest of:<br/>1. Designated housing allowance<br/>2. Actual housing expenses<br/>3. Fair rental value including furnishings and utilities"]
 
-H --> K[Excluded from gross income<br/>if qualified]
+H --> K["Excluded from gross income if qualified"]
 
-K --> L[Exclusion limited by fair rental value rule<br/>including furnishings and utilities]
+K --> L["Limited by fair rental value rule including furnishings and utilities"]
 
-E --> M{Self-Employment Tax}
-F --> N{Self-Employment Tax}
+E --> M{"Self-Employment Tax"}
+F --> N{"Self-Employment Tax"}
 
-M --> O[Included in net earnings from self-employment<br/>Subject to SE tax]
+M --> O["Included in net earnings from self-employment.<br/>Subject to SE tax"]
 
-N --> P[Fair rental value included in<br/>net earnings from self-employment<br/>Subject to SE tax]
+N --> P["Fair rental value included in net earnings from self-employment.<br/>Subject to SE tax"]
 
-O --> Q{Approved Form 4361 exemption?}
-P --> R{Approved Form 4361 exemption?}
+O --> Q{"Approved Form 4361 exemption?"}
+P --> R{"Approved Form 4361 exemption?"}
 
-Q -->|Yes| S[Not subject to SE tax]
-Q -->|No| T[SE tax applies]
+Q -->|Yes| S["Not subject to SE tax"]
+Q -->|No| T["SE tax applies"]
 
-R -->|Yes| U[Not subject to SE tax]
-R -->|No| V[SE tax applies]
+R -->|Yes| U["Not subject to SE tax"]
+R -->|No| V["SE tax applies"]
 
-J --> W{Did housing benefit exceed<br/>allowed exclusion?}
-L --> X{Did housing benefit exceed<br/>allowed exclusion?}
+J --> W{"Did benefit exceed allowed exclusion?"}
+L --> X{"Did benefit exceed allowed exclusion?"}
 
-W -->|Yes| Y[Excess amount included<br/>in gross income]
-W -->|No| Z[No taxable excess]
+W -->|Yes| Y["Excess amount included in gross income"]
+W -->|No| Z["No taxable excess"]
 
-X -->|Yes| AA[Excess amount included<br/>in gross income]
-X -->|No| AB[No taxable excess]
+X -->|Yes| AA["Excess amount included in gross income"]
+X -->|No| AB["No taxable excess"]
 ```
