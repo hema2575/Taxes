@@ -1,0 +1,18 @@
+flowchart TD
+    A[Housing Benefit for Active Minister] --> B{Type of Benefit?}
+
+    B --> C[Cash Housing Allowance]
+    B --> D[Church-Provided Parsonage<br/>Fair Rental Value]
+
+    C --> E{Federal Income Tax}
+    D --> F{Federal Income Tax}
+
+    E --> G[Excluded from income<br/>up to the least of:<br/>• Designated allowance<br/>• Actual housing expenses<br/>• Fair rental value incl. utilities]
+
+    F --> H[Excluded from gross income]
+
+    C --> I{Self-Employment Tax}
+    D --> J{Self-Employment Tax}
+
+    I --> K[Included in net earnings<br/>Subject to SE tax<br/>unless approved exemption]
+    J --> L[Included in net earnings<br/>Subject to SE tax<br/>unless approved exemption]
