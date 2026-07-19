@@ -8,50 +8,81 @@ flowchart TD
     d --> e["cash housing allowance"]
     d --> f["church-provided parsonage"]
     
-    %% -- FEDERAL INCOME TAX TRACK (Blue) --
-    e --> g{"federal income tax"}:::fedTrack
-    f --> h{"federal income tax"}:::fedTrack
-    
-    g --> i["qualified housing allowance excluded from gross income"]:::fedTrack
-    h --> k["qualified parsonage excluded from gross income"]:::fedTrack
-    
-    i --> j["housing allowance exclusion limit"]:::fedTrack
-    j --> j1["designated housing allowance"]:::fedTrack
-    j --> j2["actual housing expenses"]:::fedTrack
-    j --> j3["fair rental value including furnishings and utilities"]:::fedTrack
-    
-    k --> l["parsonage exclusion limited by fair rental value"]:::fedTrack
-    l --> l1["fair rental value"]:::fedTrack
-    l --> l2["furnishings"]:::fedTrack
-    l --> l3["utilities"]:::fedTrack
+    %% -- FEDERAL INCOME TAX TRACK --
+    subgraph FED["FEDERAL INCOME TAX TRACK"]
+        g{"federal income tax"}
+        h{"federal income tax"}
+        i["qualified housing allowance excluded from gross income"]
+        k["qualified parsonage excluded from gross income"]
+        j["housing allowance exclusion limit"]
+        j1["designated housing allowance"]
+        j2["actual housing expenses"]
+        j3["fair rental value including furnishings and utilities"]
+        l["parsonage exclusion limited by fair rental value"]
+        l1["fair rental value"]
+        l2["furnishings"]
+        l3["utilities"]
+        w{"benefit exceeds allowable exclusion?"}
+        x{"benefit exceeds allowable exclusion?"}
+        y["excess included in gross income"]
+        z["no taxable excess"]
+        aa["excess included in gross income"]
+        ab["no taxable excess"]
+    end
 
-    %% Excess Exclusion Test (Part of Fed Track)
-    j --> w{"benefit exceeds allowable exclusion?"}:::fedTrack
-    l --> x{"benefit exceeds allowable exclusion?"}:::fedTrack
-    
-    w -->|yes| y["excess included in gross income"]:::fedTrack
-    w -->|no| z["no taxable excess"]:::fedTrack
-    x -->|yes| aa["excess included in gross income"]:::fedTrack
-    x -->|no| ab["no taxable excess"]:::fedTrack
-    
-    %% -- SELF-EMPLOYMENT TAX TRACK (Orange) --
-    e --> m{"self-employment tax"}:::seTrack
-    f --> n{"self-employment tax"}:::seTrack
-    
-    m --> o["housing allowance included in net earnings from self-employment"]:::seTrack
-    n --> p["parsonage fair rental value included in net earnings from self-employment"]:::seTrack
-    
-    o --> q{"approved form 4361 exemption?"}:::seTrack
-    p --> r{"approved form 4361 exemption?"}:::seTrack
-    
-    q -->|yes| s["not subject to se tax"]:::seTrack
-    q -->|no| t["se tax applies"]:::seTrack
-    
-    r -->|yes| u["not subject to se tax"]:::seTrack
-    r -->|no| v["se tax applies"]:::seTrack
+    %% -- SELF-EMPLOYMENT TAX TRACK --
+    subgraph SE["SELF-EMPLOYMENT TAX TRACK"]
+        m{"self-employment tax"}
+        n{"self-employment tax"}
+        o["housing allowance included in net earnings from self-employment"]
+        p["parsonage fair rental value included in net earnings from self-employment"]
+        q{"approved form 4361 exemption?"}
+        r{"approved form 4361 exemption?"}
+        s["not subject to se tax"]
+        t["se tax applies"]
+        u["not subject to se tax"]
+        v["se tax applies"]
+    end
 
-    %% Styling Classes
-    classDef fedTrack fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b;
-    classDef seTrack fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100;
+    %% Connections to Tracks
+    e --> g
+    f --> h
+    
+    g --> i
+    h --> k
+    
+    i --> j
+    j --> j1
+    j --> j2
+    j --> j3
+    
+    k --> l
+    l --> l1
+    l --> l2
+    l --> l3
+
+    j --> w
+    l --> x
+    
+    w -->|yes| y
+    w -->|no| z
+    x -->|yes| aa
+    x -->|no| ab
+    
+    e --> m
+    f --> n
+    
+    m --> o
+    n --> p
+    
+    o --> q
+    p --> r
+    
+    q -->|yes| s
+    q -->|no| t
+    
+    r -->|yes| u
+    r -->|no| v
+
 
 ```
