@@ -1,32 +1,41 @@
 ```mermaid
 flowchart TD
 
-A["Housing Benefit for Active Minister"] --> B{"Is the person a qualifying minister performing ministerial services?"}
+A["Housing Benefit for Active Minister"] --> B{"Qualifying minister performing ministerial services?"}
 
-B -->|No| C["Apply normal tax rules Housing benefit may be taxable"]
+B -->|No| C["Apply normal tax rules. Housing benefit may be taxable."]
 
-B -->|Yes| D{"Type of Benefit?"}
+B -->|Yes| D{"Type of benefit?"}
 
 D --> E["Cash Housing Allowance"]
-D --> F["Church-Provided Parsonage<br/>Fair Rental Value"]
+D --> F["Church-Provided Parsonage"]
+
+%% Federal income tax
 
 E --> G{"Federal Income Tax"}
 F --> H{"Federal Income Tax"}
 
-G --> I["Excluded from gross income if qualified"]
+G --> I["Qualified housing allowance excluded from gross income"]
+H --> K["Qualified parsonage excluded from gross income"]
 
-I --> J["Exclusion limit is the lowest of:<br/>1 Designated housing allowance<br/>2 Actual housing expenses<br/>3 Fair rental value including furnishings and utilities"]
+I --> J["Housing allowance exclusion limit"]
+J --> J1["Designated housing allowance"]
+J --> J2["Actual housing expenses"]
+J --> J3["Fair rental value including furnishings and utilities"]
 
-H --> K["Excluded from gross income if qualified"]
+K --> L["Parsonage exclusion limited by fair rental value"]
+L --> L1["Fair rental value"]
+L --> L2["Furnishings"]
+L --> L3["Utilities"]
 
-K --> L["Limited by fair rental value rule including furnishings and utilities"]
+%% Self-employment tax
 
 E --> M{"Self-Employment Tax"}
 F --> N{"Self-Employment Tax"}
 
-M --> O["Included in net earnings from self-employment.<br/>Subject to SE tax"]
+M --> O["Housing allowance included in net earnings from self-employment"]
 
-N --> P["Fair rental value included in net earnings from self-employment <br/>Subject to SE tax"]
+N --> P["Parsonage fair rental value included in net earnings from self-employment"]
 
 O --> Q{"Approved Form 4361 exemption?"}
 P --> R{"Approved Form 4361 exemption?"}
@@ -37,12 +46,15 @@ Q -->|No| T["SE tax applies"]
 R -->|Yes| U["Not subject to SE tax"]
 R -->|No| V["SE tax applies"]
 
-J --> W{"Did benefit exceed allowed exclusion?"}
-L --> X{"Did benefit exceed allowed exclusion?"}
+%% Excess exclusion test
 
-W -->|Yes| Y["Excess amount included in gross income"]
+J --> W{"Benefit exceeds allowable exclusion?"}
+L --> X{"Benefit exceeds allowable exclusion?"}
+
+W -->|Yes| Y["Excess included in gross income"]
 W -->|No| Z["No taxable excess"]
 
-X -->|Yes| AA["Excess amount included in gross income"]
+X -->|Yes| AA["Excess included in gross income"]
 X -->|No| AB["No taxable excess"]
+
 ```
