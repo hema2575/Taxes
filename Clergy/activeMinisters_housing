@@ -3,7 +3,7 @@ flowchart TD
 
 A["Housing Benefit for Active Minister"] --> B{"Is the person a qualifying minister performing ministerial services?"}
 
-B -->|No| C["Apply normal tax rules. Housing benefit may be taxable"]
+B -->|No| C["Apply normal tax rules Housing benefit may be taxable"]
 
 B -->|Yes| D{"Type of Benefit?"}
 
@@ -15,7 +15,7 @@ F --> H{"Federal Income Tax"}
 
 G --> I["Excluded from gross income if qualified"]
 
-I --> J["Exclusion limit is the lowest of:<br/>1. Designated housing allowance<br/>2. Actual housing expenses<br/>3. Fair rental value including furnishings and utilities"]
+I --> J["Exclusion limit is the lowest of:<br/>1 Designated housing allowance<br/>2 Actual housing expenses<br/>3 Fair rental value including furnishings and utilities"]
 
 H --> K["Excluded from gross income if qualified"]
 
@@ -26,7 +26,7 @@ F --> N{"Self-Employment Tax"}
 
 M --> O["Included in net earnings from self-employment.<br/>Subject to SE tax"]
 
-N --> P["Fair rental value included in net earnings from self-employment.<br/>Subject to SE tax"]
+N --> P["Fair rental value included in net earnings from self-employment <br/>Subject to SE tax"]
 
 O --> Q{"Approved Form 4361 exemption?"}
 P --> R{"Approved Form 4361 exemption?"}
