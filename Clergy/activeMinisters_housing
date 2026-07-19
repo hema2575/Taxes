@@ -1,60 +1,57 @@
 ```mermaid
 flowchart TD
+    %% Core Nodes
+    a["housing benefit for active minister"] --> b{"qualifying minister performing ministerial services?"}
+    b -->|no| c["apply normal tax rules. housing benefit may be taxable."]
+    b -->|yes| d{"type of benefit?"}
+    
+    d --> e["cash housing allowance"]
+    d --> f["church-provided parsonage"]
+    
+    %% -- FEDERAL INCOME TAX TRACK (Blue) --
+    e --> g{"federal income tax"}:::fedTrack
+    f --> h{"federal income tax"}:::fedTrack
+    
+    g --> i["qualified housing allowance excluded from gross income"]:::fedTrack
+    h --> k["qualified parsonage excluded from gross income"]:::fedTrack
+    
+    i --> j["housing allowance exclusion limit"]:::fedTrack
+    j --> j1["designated housing allowance"]:::fedTrack
+    j --> j2["actual housing expenses"]:::fedTrack
+    j --> j3["fair rental value including furnishings and utilities"]:::fedTrack
+    
+    k --> l["parsonage exclusion limited by fair rental value"]:::fedTrack
+    l --> l1["fair rental value"]:::fedTrack
+    l --> l2["furnishings"]:::fedTrack
+    l --> l3["utilities"]:::fedTrack
 
-A["Housing Benefit for Active Minister"] --> B{"Qualifying minister performing ministerial services?"}
+    %% Excess Exclusion Test (Part of Fed Track)
+    j --> w{"benefit exceeds allowable exclusion?"}:::fedTrack
+    l --> x{"benefit exceeds allowable exclusion?"}:::fedTrack
+    
+    w -->|yes| y["excess included in gross income"]:::fedTrack
+    w -->|no| z["no taxable excess"]:::fedTrack
+    x -->|yes| aa["excess included in gross income"]:::fedTrack
+    x -->|no| ab["no taxable excess"]:::fedTrack
+    
+    %% -- SELF-EMPLOYMENT TAX TRACK (Orange) --
+    e --> m{"self-employment tax"}:::seTrack
+    f --> n{"self-employment tax"}:::seTrack
+    
+    m --> o["housing allowance included in net earnings from self-employment"]:::seTrack
+    n --> p["parsonage fair rental value included in net earnings from self-employment"]:::seTrack
+    
+    o --> q{"approved form 4361 exemption?"}:::seTrack
+    p --> r{"approved form 4361 exemption?"}:::seTrack
+    
+    q -->|yes| s["not subject to se tax"]:::seTrack
+    q -->|no| t["se tax applies"]:::seTrack
+    
+    r -->|yes| u["not subject to se tax"]:::seTrack
+    r -->|no| v["se tax applies"]:::seTrack
 
-B -->|No| C["Apply normal tax rules. Housing benefit may be taxable."]
-
-B -->|Yes| D{"Type of benefit?"}
-
-D --> E["Cash Housing Allowance"]
-D --> F["Church-Provided Parsonage"]
-
-%% Federal income tax
-
-E --> G{"Federal Income Tax"}
-F --> H{"Federal Income Tax"}
-
-G --> I["Qualified housing allowance excluded from gross income"]
-H --> K["Qualified parsonage excluded from gross income"]
-
-I --> J["Housing allowance exclusion limit"]
-J --> J1["Designated housing allowance"]
-J --> J2["Actual housing expenses"]
-J --> J3["Fair rental value including furnishings and utilities"]
-
-K --> L["Parsonage exclusion limited by fair rental value"]
-L --> L1["Fair rental value"]
-L --> L2["Furnishings"]
-L --> L3["Utilities"]
-
-%% Self-employment tax
-
-E --> M{"Self-Employment Tax"}
-F --> N{"Self-Employment Tax"}
-
-M --> O["Housing allowance included in net earnings from self-employment"]
-
-N --> P["Parsonage fair rental value included in net earnings from self-employment"]
-
-O --> Q{"Approved Form 4361 exemption?"}
-P --> R{"Approved Form 4361 exemption?"}
-
-Q -->|Yes| S["Not subject to SE tax"]
-Q -->|No| T["SE tax applies"]
-
-R -->|Yes| U["Not subject to SE tax"]
-R -->|No| V["SE tax applies"]
-
-%% Excess exclusion test
-
-J --> W{"Benefit exceeds allowable exclusion?"}
-L --> X{"Benefit exceeds allowable exclusion?"}
-
-W -->|Yes| Y["Excess included in gross income"]
-W -->|No| Z["No taxable excess"]
-
-X -->|Yes| AA["Excess included in gross income"]
-X -->|No| AB["No taxable excess"]
+    %% Styling Classes
+    classDef fedTrack fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b;
+    classDef seTrack fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100;
 
 ```
