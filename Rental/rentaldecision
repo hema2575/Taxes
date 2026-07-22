@@ -1,0 +1,81 @@
+Rental Activities/
+│
+├── README.md
+├── images/
+│   ├── rental-overview.svg
+│   ├── material-participation.svg
+│   ├── active-participation.svg
+│   └── real-estate-professional.svg
+│
+├── diagrams/
+│   ├── rental-overview.mmd
+│   ├── material-participation.mmd
+│   └── active-participation.mmd
+
+-----------------------------------------------------
+
+
+```mermaid
+flowchart TD
+
+A([Start Rental Activity Interview])
+
+A --> B["📋 1. Tell me about your rental property
+• Residential, commercial, vacation?
+• Rented all year?
+• How many properties?"]
+
+B --> C["👤 2. Who manages the property?
+• You?
+• Property manager?
+• Shared responsibilities?"]
+
+C --> D["🛠️ 3. What did YOU personally do?
+• Advertise property
+• Screen tenants
+• Collect rent
+• Coordinate repairs
+• Communicate with tenants
+• Maintain records"]
+
+D --> E["⏱️ 4. Approximately how much time did you spend?
+• Estimated hours
+• More than anyone else?
+• Did others perform most of the work?"]
+
+E --> F["📑 5. Did you make management decisions?
+• Approve tenants
+• Set rental rates
+• Authorize repairs
+• Decide improvements"]
+
+F --> G{"Active Participation?"}
+
+G -->|Likely Yes| H["Consider $25,000 Special Allowance"]
+
+G -->|Need More Analysis| I["Evaluate Material Participation"]
+
+I --> J["👥 6. Who else participated?
+• Property manager
+• Spouse
+• Contractors
+• Other owners"]
+
+J --> K["🏢 7. Is real estate your primary profession?
+• Real property trade/business?
+• 750+ hours?
+• More than half of working time?"]
+
+K --> L{"Real Estate Professional?"}
+
+L -->|Yes| M["Apply Material Participation Tests"]
+
+L -->|No| N["Rental generally remains Passive"]
+
+M --> O["Determine whether rental activity is Passive or Nonpassive"]
+
+N --> P["Review Passive Loss Rules & Carryforwards"]
+
+O --> Q([Complete Tax Analysis])
+P --> Q
+```
