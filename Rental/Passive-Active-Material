@@ -1,0 +1,25 @@
+```mermaid
+flowchart TD
+
+A([Start]) --> B{Is the activity a rental activity under IRC §469?}
+
+B -->|No| C{Did the taxpayer materially participate?}
+C -->|Yes| D[Nonpassive Activity]
+C -->|No| E[Passive Activity]
+
+B -->|Yes| F{Is the taxpayer a Real Estate Professional?}
+
+F -->|Yes| G{Did the taxpayer materially participate?}
+G -->|Yes| H[Nonpassive Rental Activity]
+G -->|No| I[Passive Rental Activity]
+
+F -->|No| J[Passive Rental Activity]
+
+J --> K{Did the taxpayer actively participate?}
+
+K -->|Yes| L[Eligible for up to $25,000 special loss allowance<br/>(subject to AGI phase-out)]
+
+K -->|No| M[Passive losses generally suspended<br/>and carried forward]
+
+I --> M
+```
